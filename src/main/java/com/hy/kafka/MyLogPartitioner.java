@@ -18,6 +18,7 @@ public class MyLogPartitioner implements Partitioner {
     }
 
     public int partition(Object o, int i) {
-        return 1;
+        return Integer.parseInt(o.toString()) % i;
+//        return 1;
     }
 }
