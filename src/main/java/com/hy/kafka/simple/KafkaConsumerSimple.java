@@ -64,6 +64,7 @@ public class KafkaConsumerSimple implements Runnable {
         //定义一个map
         Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
         topicCountMap.put(topic1, 4);
+
         Map<String, List<KafkaStream<byte[], byte[]>>> topicStreamMap = javaConsumerConnector.createMessageStreams(topicCountMap);
         List<KafkaStream<byte[], byte[]>> streams = topicStreamMap.get(topic1);
         ExecutorService executorService = Executors.newFixedThreadPool(4);
